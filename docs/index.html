@@ -49,8 +49,8 @@ a.link {
         </div>
     </section>
     <br><br>
-    <iframe width="800" height="450" src="https://www.youtube.com/embed/T_t9XXZYOYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <!--<img src="./img/teaser.png" style="width: 100%;"/>-->
+    <!-- <iframe width="800" height="450" src="https://www.youtube.com/embed/T_t9XXZYOYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    <img src="./img/coming_soon.png" style="width: 70%;"/>
 </center>
 
 <br>
@@ -59,73 +59,71 @@ a.link {
 Formula-driven supervised learning (FDSL) has been shown to be an effective method for pre-training vision transformers, where ExFractalDB-21k was shown to exceed the pre-training effect of ImageNet-21k. These studies also indicate that contours mattered more than textures when pre-training vision transformers. However, the lack of a systematic investigation as to why these contour-oriented synthetic datasets can achieve the same accuracy as real datasets leaves much room for skepticism. <font color="#c7254e" font size="5"><b>In the present work, we develop a novel methodology based on circular harmonics for systematically investigating the design space of contour-oriented synthetic datasets. This allows us to efficiently search the optimal range of FDSL parameters and maximize the variety of synthetic images in the dataset, which we found to be a critical factor. When the resulting new dataset VisualAtom-21k is used for pre-training ViT-Base, the top-1 accuracy reached 83.7% when fine-tuning on ImageNet-1k. This is only 0.5% difference from the top-1 accuracy (84.2%) achieved by the JFT-300M pre-training, even though the scale of images is 1/14.</b></font> Unlike JFT-300M which is a static dataset, the quality of synthetic datasets will continue to improve, and the current work is a testament to this possibility. FDSL is also free of the common issues associated with real images, e.g. privacy/copyright issues, labeling costs/errors, and ethical biases.
 </p>
 
-<!-- <br><br><br>
-<h2>Two hypotheses</h2>
-
-To enhance the performance of FDSL, we test the following hypotheses 1 & 2:<br><br><br>
-
-<font size="4">Hypothesis 1: Object Contours are what matter in FDSL datasets</font>
-<ul>
-  <li>In our preliminary study we found that attention was focused on the outer contours of the fractals</li>
-  <li>We created a new dataset that consists only of contours – Radial Contour DataBase (RCDB)</li>
-  <li>Despite the lack of any texture, RCDB performed close to FractalDB and outperformed ImageNet-21k</li>
-</ul>
+<br><br><br>
 <center>
-        <img src="./img/hypothesis1.png" style="width: 60%;"/>
-        <img src="./img/h1_exp.png" style="width: 39%;"/>
-</center><br><br><br>
-
-<font size="4">Hypothesis 2: Increased number of parameters in FDSL pre-training</font>
-<ul>
-  <li>We tested various synthetic datasets with varying complexity of images</li>
-  <li>For RCDB, we changed the number of polygons, radius, line width, resizing factor, and Perlin noise</li>
-  <li>Complex images increases the difficulty of the pre-training task and leads to better downstream performance</li>
-</ul>
-<center>
-        <img src="./img/hypothesis2.png" style="width: 54%;"/> 
-        <img src="./img/h2_exp.png" style="width: 45%;"/>
-</center> -->
-
-<!-- <br><br><br>
-<h2>Samples images from our FDSL datasets</h2>
-
-<center>
-        <img src="./img/sample_images.png" style="width: 100%;"/> 
-</center> -->
-
-<!-- <br><br><br>
-<h2>Comparison: ImageNet-1k, MS COCO, Other datasets</h2>
-
-We have found that vision transformers (ViT) can be successfully pre-trained without real images, human- and self- supervision, and can exceed the accuracy of ImageNet-21k pre- training when fine-tuned on ImageNet-1k. We constructed a new dataset Radial Contour DataBase (RCDB) based on the as- sumption that contours are what matter for the pre-training of ViT. RCDB also exceeded the performance of ImageNet-21k pre- training, while consisting only of contours.
-<center>
-        <img src="./img/comparison_fdsl_sl.png" style="width: 100%;"/>
+    <img src="./img/header_first.png" style="width: 40%;"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="./img/header_4.png" style="width: 24%;"/>
 </center>
-<br>
 
-(Left) Comparison of ImageNet-1k fine-tuning. Accuracies obtained with ViT-Ti/B architectures are listed. 21k/50k indi- cates the number of classes in the pre-training phase. Best and second-best values for a given dataset are in underlined bold and bold, respectively. (Right) Comparison of object detection and instance segmen- tation. Several pre-trained models were validated on COCO dataset. Best values at each learning type are in bold.
+<br><br><br>
+<h2>Hypothes</h2>
+To enhance the performance of FDSL, we test the following hypothes:<br><br><br>
+
+<font size="4">Hypothes: The Variation of Object Contours is what matter in FDSL datasets</font>
+<ul>
+  <li>Related works about FDSL have shown that the pre-training ViT focuses on the object contours of images</li>
+  <li>We proposed a new FDSL dataset – VisualAtom with sinusoidal waves for improving the design variation of contours</li>
+  <li>Brought variety to the contours, VisualAtom outperformed latest SoTA FDSL datasets (e.g., RCDB and ExFractalDB)</li>
+</ul>
+<br>
 <center>
-        <img src="./img/comparison_imagenet1k_mscoco.png" style="width: 100%;"/>
+        <img src="./img/creation_visualatom.png" style="width: 80%;"/><br><br><br>
+        <img src="./img/compare_with_other_fdsl.png" style="width: 50%;"/>
 </center>
-<br>
 
-Comparison of pre-training for SL/SSL methods. For SSL, (D) indicates DINO. Best values at each learning type are in bold.
+<br><br><br>
+<h2>Samples images from our VisualAtom dataset</h2>
+
 <center>
-        <img src="./img/comparison_ft.png" style="width: 100%;"/>
-</center> -->
+        <img src="./img/example_of_visual_atom.png" style="width: 100%;"/> 
+</center>
 
-<!-- <br><br><br>
-<h2>Failure modes: FractalDB and RCDB</h2>
+<br><br><br>
+<h2>Comparison: Fine-tuning on ImageNet, CIFAR, Cars, Other datasets</h2>
 
-We investigate the minimum number of points used in the rendering of fractals in FractalDB. The following figures shows the results and image examples in the point-rendered FractalDB. According to the performance rates in the figures, the pre-trained models acquire a good representation when the number of fractal points is 50k or higher, at which point the fractal images start to form a contour.
+We found that vision transformers (ViT) can have higher pre-training effect if pre-trained on the dataset which has the rich variation of contour shapes among categories. 
+We also found that our proposed VisualAtom outperforms all existing FDSL and some SL/SSL methods in classification tasks using real images (such as fine-tuning on ImageNet-1k).
+<br><br><br>
 <center>
-        <img src="./img/failuremodes_fractaldb.png" style="width: 80%;"/>
+    <p style="width: 100%;"> Comparison of pre-training methods. Best and second-best scores at ViT-Tiny are shown in underlined bold and bold, respectively. 
+        At ViT-Base, best scores are shown in bold. </p>
+    <img src="./img/comp_all_datasets.png" style="width: 100%;"/>
 </center>
 <br><br><br>
-
-We verify RCDB images with and without broken object contours, as shown in the following figures. We deliberately draw 1k lines with the same color as the background. The lengths and positions of the lines are fully randomized. We adjust the thickness of the lines so that the object contours of RCDB are corrupted but the main frame does not disappear like in the figures. 
 <center>
-        <img src="./img/failuremodes_rcdb.png" style="width: 80%;"/>
-</center> -->
+    <p style="width: 60%;"> Comparison with fine-tuning accuracy on ImageNet1k. Res. indicates the image resolution at fine-tuning.
+        Best and second-best scores at each resolution and model scale are shown in underlined bold and bold, respectively. </p>
+    <img src="./img/imagenet_comp.png" style="width: 60%;"/>
+    <p style="width: 60%;"><small> * Since the JFT-300M, which is not available, cannot be compared with the same setting, we transcribe the accuracy with the different setting reported in the previous work. </small></p>
+</center>
+
+<br><br><br>
+<h2>Systematically Investigate the Design Space of Contour-Oriented Synthetic Dataset</h2>
+
+
+In order to find out the factors that improve the pre-training effect, we conducted an systematically investigation for image contour elements using VisualAtom. The following figures show the fine-tuning accuracies of varying the range of (A) frequency, (B) amplitude, and (C) quantization parameter of the contours which compose VisualAtom. Here, the frequency controls the outline shape, the amplitude controls the size of shape, and the quantization parameter controls the smoothness.
+According to this investigation, we found that variety of contour shapes in the pre-training dataset is a crucial factor for achieving a superior pre-training effect.
+<br><br><br>
+<p style="width: 100%;"> (left) : (A) Fine-tuning accuracy when varying the range of frequency parameters n1, n2. (middle) : (B) Fine-tuning accuracy when varying the range of number of orbits K. (right) : (C) Fine-tuning accuracy when varying the range of quantization parameter q. </p>
+<center>
+    <img src="./img/va_1.png" style="width: 32%;"/>
+    &nbsp;&nbsp;
+    <img src="./img/va_2.png" style="width: 32%;"/>
+    &nbsp;&nbsp;
+    <img src="./img/va_3.png" style="width: 32%;"/>
+</center>
+<br><br><br>
 
 <br>
 <h2>Citation (preprint)</h2>
@@ -155,14 +153,12 @@ We verify RCDB images with and without broken object contours, as shown in the f
         <!--<a href="">[Dataset (TBD)]</a>-->
     </li>
 </ul>
-<br><br>
 
 <h2>Acknowledgement</h2></a>
 <ul>
     <li> This work is based on results obtained from a project, JPNP20006, commissioned by the New Energy and Industrial Technology Development Organization (NEDO).</li>
     <li> Computational resource of AI Bridging Cloud Infrastructure (ABCI) provided by National Institute of Advanced Industrial Science and Technology (AIST) was used.</li>
 </ul>
-
 
 <script type="text/javascript" src="./footer.js"></script>
 
